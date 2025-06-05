@@ -49,7 +49,19 @@ body {
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  color: var(--second-color);
+  color: var(--second-color);  
+
+  min-height: 100vh; /* ensure it fills the viewport */
+  /* first layer = black from 0→50vh; second layer = yellow from 50vh→100vh */
+  background:
+    /* top half: black */
+    black    /* color */
+    0  0     /* position: top-left */
+    / 100% 50vh no-repeat,  /* size: full‐width × half‐viewport */
+    /* bottom half: yellow */
+    #f1c40f /* color */
+    0 50vh   /* position: x=0, y=50vh (start at halfway down) */
+    / 100% 50vh no-repeat;   /* size: full‐width × half‐viewport */
 }
 
 h1, h2, p {
